@@ -73,10 +73,16 @@ namespace CreditCardKottansTests
             StringAssert.AreEqualIgnoringCase(JCB, vendor);
         }
 
+        // extra character at the end
         [TestCase("35301113333000001")]
         [TestCase("41111111111111112")]
         [TestCase("3434343434343433")]
         [TestCase("50000000000006114")]
+
+        // Diners
+        [TestCase("36148900647913")]
+        // Discover card
+        [TestCase("6011000400000000")]
         public void GetCreditCardVendor_Unknown(string number)
         {
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
