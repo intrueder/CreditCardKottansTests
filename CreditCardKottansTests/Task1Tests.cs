@@ -81,8 +81,6 @@ namespace CreditCardKottansTests
 
         // Diners
         [TestCase("36148900647913")]
-        // Discover card
-        [TestCase("6011000400000000")]
         public void GetCreditCardVendor_Unknown(string number)
         {
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
