@@ -15,5 +15,11 @@ namespace CreditCardKottansTests
         {
             Assert.AreEqual(next, CreditCardUtility.GenerateNextCreditCardNumber(original));
         }
+
+        [TestCase("4999999999999999993", "5000000000000000005")]
+        public void GenerateNextCreditCardNumber_WithBoundNumber_ResultsWithError(string original, string next)
+        {
+            Assert.AreNotEqual(next, CreditCardUtility.GenerateNextCreditCardNumber(original));
+        }
     }
 }
