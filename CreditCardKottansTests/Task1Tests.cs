@@ -28,6 +28,7 @@ namespace CreditCardKottansTests
         public void GetCreditCardVendor_AmericanExpress(string number)
         {
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
+            //StringAssert.AreEqualIgnoringCase("AmericanExpress", vendor);
             StringAssert.AreEqualIgnoringCase(AmericanExpress, vendor);
         }
 
@@ -83,8 +84,14 @@ namespace CreditCardKottansTests
         [TestCase("36148900647913")]
         public void GetCreditCardVendor_Unknown(string number)
         {
+            var isValid = CreditCardUtility.IsCreditCardNumberValid(number);
+            //Assert.IsFalse(isValid);
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
             StringAssert.AreEqualIgnoringCase(Unknown, vendor);
         }
+
+        // https://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm
+        // http://support.worldpay.com/support/kb/bg/testandgolive/tgl5103.html
+        // http://www.securetrading.com/resources/test-card-numbers-2/
     }
 }

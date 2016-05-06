@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace CreditCardKottansTests
 {
@@ -12,16 +7,19 @@ namespace CreditCardKottansTests
         public static string GetCreditCardVendor(string creditCardNumber)
         {
             throw new NotImplementedException();
+            //return Luhn.GetCreditCardVendor(creditCardNumber).ToString();
         }
 
         public static bool IsCreditCardNumberValid(string creditCardNumber)
         {
             throw new NotImplementedException();
+            //return Luhn.IsCreditCardNumberValid(creditCardNumber);
         }
 
         public static string GenerateNextCreditCardNumber(string sourceCardNumber)
         {
             throw new NotImplementedException();
+            //return Luhn.GenerateNextCreditCardNumber(sourceCardNumber);
         }
     }
 }
