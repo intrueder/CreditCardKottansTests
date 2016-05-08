@@ -10,7 +10,7 @@ namespace CreditCardKottansTests
     [TestFixture]
     public class Task1Tests
     {
-        private const string AmericanExpress = "American Express";
+        private const string AmericanExpress = "AmericanExpress";
         private const string Maestro = "Maestro";
         private const string MasterCard = "MasterCard";
         private const string VISA = "VISA";
@@ -28,8 +28,7 @@ namespace CreditCardKottansTests
         public void GetCreditCardVendor_AmericanExpress(string number)
         {
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
-            //StringAssert.AreEqualIgnoringCase("AmericanExpress", vendor);
-            StringAssert.AreEqualIgnoringCase(AmericanExpress, vendor);
+            StringAssert.AreEqualIgnoringCase(AmericanExpress, vendor.Replace(" ", ""));
         }
 
         [TestCase("5000000000000611")]
@@ -47,7 +46,7 @@ namespace CreditCardKottansTests
         public void GetCreditCardVendor_MasterCard(string number)
         {
             var vendor = CreditCardUtility.GetCreditCardVendor(number);
-            StringAssert.AreEqualIgnoringCase(MasterCard, vendor);
+            StringAssert.AreEqualIgnoringCase(MasterCard, vendor.Replace(" ", ""));
         }
 
         [TestCase("4111111111111111")]
@@ -55,7 +54,7 @@ namespace CreditCardKottansTests
         [TestCase("4012888888881881")]
         [TestCase("4012 8888 8888 1881")]
         [TestCase("4222222222222")]
-        [TestCase("4222 2222 222 22")]
+        [TestCase("4222 2222 2222 2")]
         [TestCase("4917610000000000003")]
         [TestCase("4911830000000")]
         public void GetCreditCardVendor_VISA(string number)

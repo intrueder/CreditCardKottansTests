@@ -29,7 +29,7 @@ namespace CreditCardKottansTests
         [TestCase("4012888888881881")]
         [TestCase("4012 8888 8888 1881")]
         [TestCase("4222222222222")]
-        [TestCase("4222 2222 222 22")]
+        [TestCase("4222 2222 2222 2")]
         [TestCase("4917610000000000003")]
         [TestCase("4911830000000")]
         [TestCase("3530111333300000")]
